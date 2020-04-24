@@ -1,0 +1,133 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0" >
+        <title>Quiz program</title>
+</head>
+<style>
+   table{
+  border: 1px solid black;
+  border-radius: 15px;
+}
+tr{
+    border:3px dotted red;
+}
+ th{
+    border:3px solid green;
+}
+    #container{
+    clear:both;
+	width: 500px;
+	margin:0 auto;
+	padding:20px 10px;
+	background-color:white;
+	border:3px solid black;
+}
+</style>
+    <body>
+        <div id="container">
+        <h1>Click me and i'll change into another text</h1>
+        <ol id="myList">
+            <li>List 1</li>
+            <li>List 2</li>
+        </ol>
+        <input id="listButton" type="button" value="add list" >
+        <table id="tableRow">
+            <tr>
+                <th>row 1</th>
+                <th> <img src=https://lh3.googleusercontent.com/9-5_0FR7R025a_B8oO-3SqWKXFe7bmKumD48fsTz6qDKCqhBkSaYNfQkjwoqRShqcaTgaMw=s113><a href="http://www.google.com">This leads to google</a></th>
+                <th>row 3</th>
+                <th>row 4</th>
+            </tr>
+            <tr>
+                <th>row 1</th>
+                <th><img src=https://lh3.googleusercontent.com/9-5_0FR7R025a_B8oO-3SqWKXFe7bmKumD48fsTz6qDKCqhBkSaYNfQkjwoqRShqcaTgaMw=s113><a href="http://www.google.com">This leads to google</a></th>
+                <th>row 3</th>
+                <th>row 4</th>
+            </tr>
+            <tr>
+                <th>row 1</th>
+                <th><img src=https://lh3.googleusercontent.com/9-5_0FR7R025a_B8oO-3SqWKXFe7bmKumD48fsTz6qDKCqhBkSaYNfQkjwoqRShqcaTgaMw=s113><a href="http://www.google.com">This leads to google</a></th>
+                <th>row 3</th>
+                <th>row 4</th>
+            </tr>
+            <tr>
+                <th>row 1</th>
+                <th><img src=https://lh3.googleusercontent.com/9-5_0FR7R025a_B8oO-3SqWKXFe7bmKumD48fsTz6qDKCqhBkSaYNfQkjwoqRShqcaTgaMw=s113><a href="http://www.google.com">This leads to google</a></th>
+                <th>row 3</th>
+                <th>row 4</th>
+            </tr>
+            <tr>
+                <th>row 1</th>
+                <th><img src=https://lh3.googleusercontent.com/9-5_0FR7R025a_B8oO-3SqWKXFe7bmKumD48fsTz6qDKCqhBkSaYNfQkjwoqRShqcaTgaMw=s113 alt="this is a cat"><a href="http://www.google.com">This leads to google</a></th>
+                <th>row 3</th>
+                <th>row 4</th>
+            </tr>
+        </table>
+        <input id="clickButton" type="button" value="add new row">
+        <hr>
+        <div id="secondContainer">
+            <p>My name is Quadri</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <footer>
+            <p>Quadri Omofolarin Akande</p>
+            <p>Occupation:Full stack developer</p>
+            <a href="mailto:quadriomofolarinakande@gmail.com">Contact me</a>
+        </footer>
+        </div>
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+            alert('DOM LOADED')
+            let firstElement = document.querySelector('#container')
+            function headerChange()
+            { 
+                let head = document.querySelector('h1')
+                head.innerHTML = "changed Header";
+            }
+            function addRow()
+            {
+                targetTable = document.querySelector('#tableRow')
+                newRow = document.createElement('tr')
+                trText = document.createTextNode('new row')
+                newRow.appendChild(trText)
+                targetTable.appendChild(newRow)
+                changeRowClass = document.querySelector('tr')
+                changeRowClass.classlist.add = 'newClass'    
+            }
+            function changeLink()
+            {
+                let anchor = document.getElementsByTagName('a')
+                anchor.style.color = "red";
+            }
+            function addList()
+            {
+                let addNewList = document.querySelector('#myList')
+                let newList = document.createElement('LI')
+                let newText = document.createTextNode('new list')
+                newList.appendChild(newText);
+                addNewList.appendChild(newList)
+            }
+        let head = document.querySelector('h1')
+          head.addEventListener('click', headerChange)
+
+          let button = document.querySelector('#clickButton')
+          button.addEventListener('click', addRow)
+           
+          let anchor = document.querySelector('a')
+          anchor.addEventListener('click' , changeLink)
+           
+          let listButton = document.querySelector('#listButton')
+          listButton.addEventListener('click' , addList)
+          
+
+
+        }
+            )
+    
+        </script>
+    </body>
+</html>
