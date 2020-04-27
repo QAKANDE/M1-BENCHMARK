@@ -21,9 +21,10 @@ let qObject = {
 
 //  Create an array with 100 random numbers in it
  let emptyArray = []
- for (let i=1 ; i<101 ; i++)
+ for (let i=1 ; i<100 ; i++)
  {
-     emptyArray.push(i);
+     let random = Math.floor(Math.random(i) * 100) + 1
+     emptyArray.push(random);
  }
  console.log(emptyArray)
 
@@ -38,14 +39,43 @@ let qObject = {
 getMaxAndMin(emptyArray)
  
 // Create an array of arrays, in which every array has 10 random numbers
-let nestedArray = [
-      sa= [], qd=[]
-]
-for(let i=1 ; i<10 ; i++)
+let nestedArray = []
+for (let x= 0 ; x <5 ; x++)
+{
+    let secondArray = []
+    for(let i=1 ; i<10 ; i++)
 {
    let randomValues =  Math.floor(Math.random(i) * 10) + 1
-    sa.push(randomValues)
-    qd.push(randomValues);
+    secondArray.push(randomValues)
+}
+    nestedArray.push(secondArray)
 }
 console.log(nestedArray)
+
+let s=[1,2,34,5,6]
+let e=[3,4,56]
+if(s.length > e.length){
+    console.log(s)
+}
+else {
+    console.log(e)
+}
+let sum = 0
+for (w=0 ; w<s.length; e++)
+{
+    sum = sum + s[w]
+    console.log(sum)
+}
+
+
+
+function findArray(arr1, arr2) {
+    let sum1 = arr1.reduce((a, b) => a + b, 0);
+    let sum2 = arr2.reduce((a, b) => a + b, 0);
+    if(sum1 > sum2) {
+      return sum1;
+    } else {
+      return sum2;
+    }
+  
 
